@@ -1,23 +1,30 @@
-### This is a tutorial for Linux beginner.
+** This is a tutorial for Linux beginners.
 
-## Paremeters
+** Paremeters
 
-# After we opened a Linux, specifically Ubuntu, shell, we could set parameters as the following codes:
+* After we opened a Linux, specifically Ubuntu, shell, we could set parameters as the following codes:
+```
 racey@racey-virtual-machine:~/bin$ FOO=EzeeLinux
 racey@racey-virtual-machine:~/bin$ echo $FOO
+```
 EzeeLinux
-# The parameter could conserve the value of the parameter as long as the shell exists.
+* The parameter could conserve the value of the parameter as long as the shell exists.
+```
 racey@racey-virtual-machine:~/bin$ TIME="$(date)"
 racey@racey-virtual-machine:~/bin$ echo $TIME
+```
 2024年 03月 13日 星期三 16:23:34 CST
+```
 racey@racey-virtual-machine:~/bin$ echo $TIME
+```
 2024年 03月 13日 星期三 16:23:34 CST
-# one thing that has to be mentioned is the parameter once created, the value will be preserved, so you can find that the output of two codes shares the same value.
 
-## Functions
+* One thing that has to be mentioned is that once the parameter once created, the value will be preserved, so you can find that the output of two codes shares the same value.
 
-# The following is an easy function model:
+** Functions
 
+* The following is an easy function model:
+```
 !/bin/bash
 
 
@@ -60,4 +67,39 @@ cat << _EOF_
 I'm sorry, I don't think there is any help for you!
 
 _EOF_
+}
 
+# The "cat <<"means that it would print the following contents up to the token right of it, with here it
+# being _EOF_ on your screen.
+
+
+# Execution
+
+# Tell 'em who we are...
+
+echo "Up -- Debian/Ubuntu Update Tool (Version 1.0)"
+
+# Update and clean:
+
+if ["$1" == "--clean"]; then
+    update
+    clean
+    leave
+fi
+
+if ["$1" == "--help"]; then
+    up-help
+    exit
+fi
+
+# Check for invalid argument
+
+if [ -n "$1" ]; then
+    echo "Up error: Invalid argument. Try 'up --help for more info." >&2
+    exit 1
+fi
+
+update
+leave
+
+```

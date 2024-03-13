@@ -1,0 +1,63 @@
+### This is a tutorial for Linux beginner.
+
+## Paremeters
+
+# After we opened a Linux, specifically Ubuntu, shell, we could set parameters as the following codes:
+racey@racey-virtual-machine:~/bin$ FOO=EzeeLinux
+racey@racey-virtual-machine:~/bin$ echo $FOO
+EzeeLinux
+# The parameter could conserve the value of the parameter as long as the shell exists.
+racey@racey-virtual-machine:~/bin$ TIME="$(date)"
+racey@racey-virtual-machine:~/bin$ echo $TIME
+2024年 03月 13日 星期三 16:23:34 CST
+racey@racey-virtual-machine:~/bin$ echo $TIME
+2024年 03月 13日 星期三 16:23:34 CST
+# one thing that has to be mentioned is the parameter once created, the value will be preserved, so you can find that the output of two codes shares the same value.
+
+## Functions
+
+# The following is an easy function model:
+
+!/bin/bash
+
+
+# These are codes available for specific functions.
+
+# Set BASH to quit script and exit on errors:
+
+set -e
+
+# Functions:
+
+update() {
+# This is a typical type of function format.
+echo "Starting full system update..."
+sudo apt-get update
+sudo apt-get dist-upgrade -yy
+
+}
+# The above is the body of the function
+
+clean(){
+echo "Cleaning up..."
+sudo apt-get autoremove -yy
+sudo apt-get autoclean
+
+}
+
+leave() {
+echo "-------------------"
+echo "-Updaate Complete!-"
+echo "-------------------"
+exit
+
+}
+
+up-help() {
+
+cat << _EOF_
+
+I'm sorry, I don't think there is any help for you!
+
+_EOF_
+

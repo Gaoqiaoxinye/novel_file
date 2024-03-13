@@ -1,14 +1,14 @@
-** This is a tutorial for Linux beginners.
+** This is a tutorial for Linux beginners.**
 
-** Paremeters
+** Paremeters**
 
-* After we opened a Linux, specifically Ubuntu, shell, we could set parameters as the following codes:
+* After we opened a Linux, specifically Ubuntu, shell, we could set parameters as the following codes:*
 ```
 racey@racey-virtual-machine:~/bin$ FOO=EzeeLinux
 racey@racey-virtual-machine:~/bin$ echo $FOO
 ```
 EzeeLinux
-* The parameter could conserve the value of the parameter as long as the shell exists.
+* The parameter could conserve the value of the parameter as long as the shell exists.*
 ```
 racey@racey-virtual-machine:~/bin$ TIME="$(date)"
 racey@racey-virtual-machine:~/bin$ echo $TIME
@@ -19,11 +19,11 @@ racey@racey-virtual-machine:~/bin$ echo $TIME
 ```
 2024年 03月 13日 星期三 16:23:34 CST
 
-* One thing that has to be mentioned is that once the parameter once created, the value will be preserved, so you can find that the output of two codes shares the same value.
+* One thing that has to be mentioned is that once the parameter once created, the value will be preserved, so you can find that the output of two codes shares the same value.*
 
-** Functions
+** Functions**
 
-* The following is an easy function model:
+* The following is an easy function model:*
 ```
 !/bin/bash
 
